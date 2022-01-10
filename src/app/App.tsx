@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
 
-function App() {
-  const [input, setInput] = useState('');
-  const [todos, setTodos] = useState([]);
+function App(): JSX.Element {
+  const [input, setInput] = useState<string>('');
+  const [todos, setTodos] = useState<never[]>([]);
 
   return (
     <div className="container">
