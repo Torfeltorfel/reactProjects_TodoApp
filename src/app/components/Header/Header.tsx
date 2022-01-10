@@ -1,7 +1,13 @@
+import styled from 'styled-components';
+
 export default function Header(): JSX.Element {
   return (
     <div>
-      <h1>todos</h1>
+      <StyledHeader>todos</StyledHeader>
     </div>
   );
 }
+
+const StyledHeader = styled.h1`
+  background-color: var(--black-700);
+`;
