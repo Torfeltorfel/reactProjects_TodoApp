@@ -17,11 +17,10 @@ export default function Form({
   const onInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value);
   };
-  const onFormSubmit = (event: any) => {
-    event.prevent.default();
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setTodos([...todos, { id: uuidv4(), title: input, completed: false }]);
     setInput('');
-    console.log(input);
   };
 
   return (
