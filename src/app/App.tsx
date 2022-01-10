@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
+import Todolist from './components/TodoList/Todolist';
 
 function App(): JSX.Element {
   const [input, setInput] = useState<string>('');
   const [todos, setTodos] = useState<never[]>([]);
+  const [editTodo, setEditTodo] = useState(null);
 
   return (
     <div className="container">
@@ -19,6 +21,9 @@ function App(): JSX.Element {
             todos={todos}
             setTodos={setTodos}
           />
+        </div>
+        <div>
+          <Todolist todos={todos} setTodos={setTodos} />
         </div>
       </div>
     </div>
