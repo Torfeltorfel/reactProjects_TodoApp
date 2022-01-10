@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
 
-function App(): JSX.Element {
+function App() {
+  const [input, setInput] = useState('');
+  const [todos, setTodos] = useState([]);
+
   return (
     <div className="container">
       <div className="app-wrapper">
@@ -9,7 +13,12 @@ function App(): JSX.Element {
           <Header />
         </div>
         <div>
-          <Form />
+          <Form
+            input={input}
+            setInput={setInput}
+            todos={todos}
+            setTodos={setTodos}
+          />
         </div>
       </div>
     </div>
